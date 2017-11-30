@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 #include <cstdlib>
-
+#include <cmath>
 
 int main(int argc, char *argv[]){
   //making sure there's only one comand lind argument
