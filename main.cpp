@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 #include <cstdlib>
-#include <cmath>
+#include <math.h>
 
 int main(int argc, char *argv[]){
   //making sure there's only one comand lind argument
@@ -10,8 +10,8 @@ int main(int argc, char *argv[]){
     return 1; exit(EXIT_FAILURE);
   }
   std::string lang = argv[1];
-  language l1 = language(lang);
-  std::vector<int> triFreq = getTrigramFreq();
+  languages l1 = languages::languages(lang);
+  std::vector<int> triFreq = l1.getTrigramFreq();
   //outputting the trigram frequency vector
   for(int i = 0; i < triFreq.size(); i++){
     std::cout << triFreq[i] < std::endl;
