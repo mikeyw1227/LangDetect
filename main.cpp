@@ -11,7 +11,7 @@ int main(int argc, char *argv[]){
   }
   std::string lang = argv[1];
   languages l1 = languages::languages(lang);
-  std::vector<int> triFreq = lang.getTrigramFreq();
+  std::vector<int> triFreq = l1.getTrigramFreq();
   //outputting the trigram frequency vector
   for(int i = 0; i < triFreq.size(); i++){
     std::cout << triFreq[i] < std::endl;
