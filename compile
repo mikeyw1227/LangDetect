@@ -1,9 +1,10 @@
 #!/bin/bash
-set -e
+set-e
 
 CPP=clang++
 
 FLAGS="-g -O -Wall -Wextra -Werror -Wfatal-errors -std=c++11 -pedantic"
 
 rm -f *.o
+
 $CPP $FLAGS -o frequencies main.cpp languages.cpp
