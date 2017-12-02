@@ -5,7 +5,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-#include <math>
+#include <math.h>
 
 /*
 A class to represent a language. A language object has three private
@@ -25,7 +25,7 @@ public:
   /*
   Constructor that takes a string that is the languages name
   */
-  languages(std::string langName);
+
 
   /*
   Constructor that takes a string that is a language
@@ -36,7 +36,7 @@ public:
   Constructor that takes an input filestream that is expected to be
   an example of a language.
   */
-  languages(std::ifstream &infile)
+  languages(std::ifstream &infile);
 
   /*
   A void function that takes a trigram and sets the puts the trigram
