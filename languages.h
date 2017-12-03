@@ -5,7 +5,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-#include <math.h>
+#include <cmath>
 
 /*
 A class to represent a language. A language object has three private
@@ -25,7 +25,7 @@ public:
   /*
   Constructor that takes a string that is the languages name
   */
-
+  languages(std::string langName, std::string lang);
 
   /*
   Constructor that takes a string that is a language
