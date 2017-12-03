@@ -9,10 +9,37 @@ languages::languages(){
   name = "";
 }
 
-languages::languages(std::string lang){
+languages::languages(std::string langName, std::string lang){
+  setTrigramFreq(lang);
   trigramFreq = getTrigramFreq();
-  name = lang;
+  name = langName;
 }
+
+languages::languages(std::string lang){
+  setTrigramFreq(lang);
+  trigramFreq = getTrigramFreq();
+  name = "";
+}
+
+languages::languages(std::ifstream &infile){
+  name = "";
+  std::string line;
+  std::vector<std::string> temp;
+  std::string str;
+  if(!infile.fail()){
+    while(getline(infile, line)){
+      temp.push_back(line);
+    }
+    for(size_t i = 0; i < temp.size(); i++){
+      str.append(temp[i]);
+    }
+    setTrigramFreq(str);
+    trigramFreq = getTrigramFreq();
+  }
+  else{
+    throw std::runtime_error("Invalid File");
+  }
+  }
 
 void setTrigramFreq(std::string language){
   std::string curStr;
@@ -42,13 +69,6 @@ void setTrigramFreq(std::string language){
   }
 }
 
-languages::languages(std::ifstream &infile){
-  for (std::string line; std::getline(infile, line); ){
-    for (i = ; i <line.size(); i++){
-      trigramFreq.push_back(setTrigramFreq(line[i]));
-      }
-    }
-  }
 std::vector<int> getTrigramFreq(){
   return trigramFreq;
 }
