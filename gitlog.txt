@@ -1,0 +1,32 @@
+
+C:\Users\mdw12\Desktop\LangDetect>git log
+commit 9ebb194e5f5d16abedd2adc45319d3f15c76ac17
+Merge: a8e3ee6 3bc7b5a
+Author: Michael White <mikeyw1227@my.uri.edu>
+Date:   Mon Dec 4 15:08:21 2017 -0500
+
+    Merge branch 'Milestone1'
+
+commit 3bc7b5ae6de4b1d94fd61ef1a0754fd1cf9e1619
+Merge: 2567d29 f8d8250
+Author: Michael White <mikeyw1227@my.uri.edu>
+Date:   Mon Dec 4 15:08:08 2017 -0500
+
+    Merge branch 'languagesCPP' into Milestone1
+
+commit f8d825093384dd261705191a5040618f03875551
+Author: Michael White <mikeyw1227@my.uri.edu>
+Date:   Mon Dec 4 15:07:50 2017 -0500
+
+    fixed seg fault errors
+
+    problem of allocating right sized vector fixed.
+
+commit a8e3ee6513ff3cdacb3cc04bbfc529a220f748b9
+Merge: bb3d92d 2567d29
+Author: Michael White <mikeyw1227@my.uri.edu>
+Date:   Mon Dec 4 14:19:50 2017 -0500
+
+    Merge branch 'Milestone1'
+
+:
