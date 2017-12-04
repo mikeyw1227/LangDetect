@@ -41,7 +41,7 @@ languages::languages(std::ifstream &infile){
   }
   }
 
-void setTrigramFreq(std::string language){
+void languages::setTrigramFreq(std::string language){
   std::string curStr;
   size_t index;
   int x;
@@ -69,10 +69,10 @@ void setTrigramFreq(std::string language){
   }
 }
 
-std::vector<int> getTrigramFreq(){
+std::vector<int> languages::getTrigramFreq(){
   return trigramFreq;
 }
 
-std::string getName(){
+std::string languages::getName(){
   return name;
 }
