@@ -4,7 +4,7 @@ set -e
 
 CPP=clang++
 
-FLAGS=="-g -O -Wall -Wextra -Werror -Wfatal-errors -std=c++11 -pedantic"
+FLAGS="-g -O -Wall -Wextra -Werror -Wfatal-errors -std=c++11 -pedantic"
 
 rm -f *.o
 
