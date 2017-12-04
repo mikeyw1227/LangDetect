@@ -5,26 +5,26 @@
 #include <cmath>
 
 languages::languages(){
-  trigramFreq.resize(pow(27,3));
+  trigramFreq = std::vector<int>(pow(27,3),0);
   name = "";
 }
 
 languages::languages(std::string langName, std::string lang){
-  trigramFreq.resize(pow(27,3));
+  trigramFreq=std::vector<int>(pow(27,3),0);
   setTrigramFreq(lang);
   trigramFreq = getTrigramFreq();
   name = langName;
 }
 
 languages::languages(std::string lang){
-  trigramFreq.resize(pow(27,3));
+  trigramFreq = std::vector<int>(pow(27,3),0);
   setTrigramFreq(lang);
   trigramFreq = getTrigramFreq();
   name = "";
 }
 
 languages::languages(std::ifstream &infile){
-  trigramFreq.resize(pow(27,3));
+  trigramFreq = std::vector<int>(pow(27,3),0);
   name = "";
   std::string line;
   std::vector<std::string> temp;
@@ -46,29 +46,38 @@ languages::languages(std::ifstream &infile){
 
 void languages::setTrigramFreq(std::string language){
   std::string curStr;
-  size_t index;
+  int index;
   int x;
-  //loop through language to get frequencies
-  for(size_t i = 0; i < language.length(); i++){
+  //loop through language to get trigrams
+  for(int i = 0; i < (int)language.length()-2; i++){
+    index = 0;
     curStr = language.substr(i, 3);
-    for(size_t j = 0; j < curStr.length(); j++){
-      x = curStr[j];
+    //loop through substring to get frequencies
+    for(int j = 0; j < (int)curStr.length(); j++){
+      x = (int)curStr[j];
+      //if there char is a space set it to 0
       if(x == 32){
         x = 0;
       }
       else{
         if(j == 0){
-          index = index + ((x - 96) * pow(27,2));
+          int firstTerm = ((x - 96) * pow(27,2));
+          index = index + firstTerm;
+          //std::cout << "first: "<< firstTerm<<std::endl;
         }
         if(j == 1){
-          index = index + ((x - 96) * 27);
+          int secondTerm = ((x - 96) * 27);
+          index = index + secondTerm;
+          //std::cout << "second: "<< secondTerm<<std::endl;
         }
         if(j == 2){
-          index = index + (x - 96);
+          int thirdTerm =  (x - 96);
+          index = index +thirdTerm;
+          //std::cout << "third: "<< thirdTerm<<std::endl;
         }
       }
     }
-    trigramFreq[index] += 1;
+      trigramFreq[index] += 1;
   }
 }
 
