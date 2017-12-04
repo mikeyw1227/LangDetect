@@ -10,18 +10,21 @@ languages::languages(){
 }
 
 languages::languages(std::string langName, std::string lang){
+  trigramFreq.resize(pow(27,3));
   setTrigramFreq(lang);
   trigramFreq = getTrigramFreq();
   name = langName;
 }
 
 languages::languages(std::string lang){
+  trigramFreq.resize(pow(27,3));
   setTrigramFreq(lang);
   trigramFreq = getTrigramFreq();
   name = "";
 }
 
 languages::languages(std::ifstream &infile){
+  trigramFreq.resize(pow(27,3));
   name = "";
   std::string line;
   std::vector<std::string> temp;
@@ -46,9 +49,9 @@ void languages::setTrigramFreq(std::string language){
   size_t index;
   int x;
   //loop through language to get frequencies
-  for(int i = 0; i < language.length(); i++){
+  for(size_t i = 0; i < language.length(); i++){
     curStr = language.substr(i, 3);
-    for(int j = 0; j < curStr.length(); j++){
+    for(size_t j = 0; j < curStr.length(); j++){
       x = curStr[j];
       if(x == 32){
         x = 0;
