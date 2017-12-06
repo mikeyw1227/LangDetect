@@ -88,3 +88,16 @@ std::vector<int> languages::getTrigramFreq(){
 std::string languages::getName(){
   return name;
 }
+
+double languages::setSimilarity(std::vector<int> triFreq1, std::vector<int> triFreq2){
+  double similarity;
+  int top = 0;
+  int botA, botB;
+  for(int i = 0; i < (int)triFreq1.size(); i++){
+    top += (triFreq1[i] * triFreq2[i]);
+    botA += pow(triFreq1[i], 2);
+    botB += pow(triFreq2[i], 2);
+  }
+  similarity = (top)/(sqrt(botA) * sqrt(botB));
+  return similarity;
+}
