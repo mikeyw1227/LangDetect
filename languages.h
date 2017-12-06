@@ -45,10 +45,13 @@ public:
   */
   void setTrigramFreq(std::string trigram);
 
+  //returns the similarity between two vectors as a double
+  double setSimilarity(std::vector<int> triFreq1, std::vector<int> triFreq2);
+
+
   //Getter Functions
   std::vector<int> getTrigramFreq();
   std::string getName();
-  double getSimilarity();
 
 private:
 
