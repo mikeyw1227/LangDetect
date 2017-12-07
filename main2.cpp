@@ -19,6 +19,6 @@ for (int i = 1; i < argc - 1; i++){
   else{
     continue;}
 }
-  std::cout<<similar
+  std::cout<<similar;
   return 0;
 }
