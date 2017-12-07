@@ -44,7 +44,7 @@ languages::languages(std::ifstream &infile){
   }
   }
 
-void setTrigramFreq(std::string language){
+void languages::setTrigramFreq(std::string language){
   std::string curStr;
   int index;
   int x;
@@ -81,11 +81,11 @@ void setTrigramFreq(std::string language){
   }
 }
 
-std::vector<int> getTrigramFreq(){
+std::vector<int> languages::getTrigramFreq(){
   return trigramFreq;
 }
 
-std::string getName(){
+std::string languages::getName(){
   return name;
 }
 
@@ -98,6 +98,6 @@ double languages::setSimilarity(std::vector<int> triFreq1, std::vector<int> triF
     botA += pow(triFreq1[i], 2);
     botB += pow(triFreq2[i], 2);
   }
-  similarity = (top)/(sqrt(botA) * sqrt(botB));
-  return similarity;
+
+  return (top)/(sqrt(botA) * sqrt(botB));
 }
