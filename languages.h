@@ -46,7 +46,7 @@ public:
   void setTrigramFreq(std::string trigram);
 
   //returns the similarity between two vectors as a double
-  double setSimilarity(std::vector<int> triFreq1, std::vector<int> triFreq2);
+  double languages::setSimilarity(std::vector<int> triFreq1, std::vector<int> triFreq2);
 
   //funciton to set the name of a triFreq
   void setName(std::string nm;)
