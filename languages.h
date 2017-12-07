@@ -49,7 +49,7 @@ public:
   double setSimilarity(std::vector<int> triFreq1, std::vector<int> triFreq2);
 
   //funciton to set the name of a triFreq
-  void setName(std::string name;)
+  void setName(std::string nm;)
 
 
   //Getter Functions
