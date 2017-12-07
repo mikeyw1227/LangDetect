@@ -90,10 +90,9 @@ std::string languages::getName(){
 }
 
 double languages::setSimilarity(std::vector<int> triFreq1, std::vector<int> triFreq2){
-  double similarity;
   int top = 0;
-  int botA;
-  int botB;
+  int botA = 0;
+  int botB = 0;
   for(int i = 0; i < (int)triFreq1.size(); i++){
     top += (triFreq1[i] * triFreq2[i]);
     botA += pow(triFreq1[i], 2);
