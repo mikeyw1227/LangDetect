@@ -98,6 +98,6 @@ double languages::setSimilarity(std::vector<int> triFreq1, std::vector<int> triF
     botA += pow(triFreq1[i], 2);
     botB += pow(triFreq2[i], 2);
   }
-  similarity = (top)/(sqrt(botA) * sqrt(botB));
-  return similarity;
+
+  return (top)/(sqrt(botA) * sqrt(botB));
 }
