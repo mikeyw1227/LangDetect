@@ -8,7 +8,9 @@ languages::languages(){
   trigramFreq = std::vector<int>(pow(27,3),0);
   name = "";
 }
-
+void languages::setName(std::string nm){
+name = nm;
+}
 languages::languages(std::string langName, std::string lang){
   trigramFreq=std::vector<int>(pow(27,3),0);
   setTrigramFreq(lang);

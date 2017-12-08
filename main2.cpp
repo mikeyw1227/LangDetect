@@ -10,8 +10,8 @@ int main(int argc, char *argv[]){
   }
 double comp = 0;
 std::string name;
-double similar;
-for (size_t i = 1; i < argc - 2; i++){
+languages similar;
+for (int i = 1; i < argc - 2; i++){
   //language to be tested
   languages lang = languages(argv[i]);
   lang.setName(argv[i]);
@@ -21,10 +21,10 @@ for (size_t i = 1; i < argc - 2; i++){
   //test language
   languages test = languages(argv[-1]);
   std::vector<int> testtf = test.getTrigramFreq();
-  similar = setSimilarity(langtf, testtf);
+  double sim = similar.setSimilarity(langtf, testtf);
   //seeing which lang is most similar
-  if(similar > comp){
-    comp = similar;
+  if(sim > comp){
+    comp = sim;
     name = lang.getName();
   }
 }
