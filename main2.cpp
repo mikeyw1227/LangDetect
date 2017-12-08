@@ -19,7 +19,7 @@ for (int i = 1; i < argc - 2; i++){
   std::vector<int> langtf = lang.getTrigramFreq();
 
   //test language
-  languages test = languages(argv[-1]);
+  languages test = languages(argv[argc-1]);
   std::vector<int> testtf = test.getTrigramFreq();
   double sim = similar.setSimilarity(langtf, testtf);
   //seeing which lang is most similar
@@ -28,6 +28,6 @@ for (int i = 1; i < argc - 2; i++){
     name = lang.getName();
   }
 }
-  std::cout << name << std::endl;
+  std::cout << name.substr(0, name.length()-4) << std::endl;
   return 0;
 }
