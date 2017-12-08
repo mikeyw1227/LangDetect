@@ -1,20 +1,33 @@
 #include "languages.h"
 #include <vector>
 #include <string>
-#include <cstdlib>
-
+#include <iostream>
+#include <fstream>
 
 int main(int argc, char *argv[]){
-  //making sure there's only one comand lind argument
-  if(argc != 2){
+  if(argc <= 2){
     return 1; exit(EXIT_FAILURE);
   }
-  std::string lang = argv[1];
-  languages l1 = languages(lang);
-  std::vector<int> triFreq = l1.getTrigramFreq();
-  //outputting the trigram frequency vector
-  for(size_t i = 0; i < triFreq.size(); i++){
-    std::cout << triFreq[i] << std::endl;
+double comp = 0;
+std::string name;
+languages similar;
+for (int i = 1; i < argc - 2; i++){
+  //language to be tested
+  languages lang = languages(argv[i]);
+  lang.setName(argv[i]);
+  //setting the languages trigramfreq
+  std::vector<int> langtf = lang.getTrigramFreq();
+
+  //test language
+  languages test = languages(argv[argc-1]);
+  std::vector<int> testtf = test.getTrigramFreq();
+  double sim = similar.setSimilarity(langtf, testtf);
+  //seeing which lang is most similar
+  if(sim > comp){
+    comp = sim;
+    name = lang.getName();
   }
+}
+  std::cout << name << std::endl;
   return 0;
 }
