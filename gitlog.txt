@@ -1,32 +1,32 @@
 
 C:\Users\mdw12\Desktop\LangDetect>git log
-commit 9ebb194e5f5d16abedd2adc45319d3f15c76ac17
-Merge: a8e3ee6 3bc7b5a
+commit 78e184460033e2fa092ba885b4f27413d05bdb87
 Author: Michael White <mikeyw1227@my.uri.edu>
-Date:   Mon Dec 4 15:08:21 2017 -0500
+Date:   Fri Dec 8 13:26:19 2017 -0500
 
-    Merge branch 'Milestone1'
+    IT WORKS!
 
-commit 3bc7b5ae6de4b1d94fd61ef1a0754fd1cf9e1619
-Merge: 2567d29 f8d8250
+commit e90c43e33a74a1085b11216a870374475fcf8dac
+Author: Unknown <sodiqagbaje@gmail.com>
+Date:   Thu Dec 7 21:26:28 2017 -0500
+
+    Edited the main fixed the setSimilarity Error
+
+    Got it to compile, implemented setName
+
+commit e5cae19865b26a0de7cf1260f877ccf36a5cd408
 Author: Michael White <mikeyw1227@my.uri.edu>
-Date:   Mon Dec 4 15:08:08 2017 -0500
+Date:   Thu Dec 7 15:07:24 2017 -0500
 
-    Merge branch 'languagesCPP' into Milestone1
+    changes  to main header file and languages.cpp file
 
-commit f8d825093384dd261705191a5040618f03875551
+commit a2534cd7fd24c7a91b7a18356ed86a3770639629
 Author: Michael White <mikeyw1227@my.uri.edu>
-Date:   Mon Dec 4 15:07:50 2017 -0500
+Date:   Thu Dec 7 13:40:18 2017 -0500
 
-    fixed seg fault errors
+    tried to fix undeclared bug
 
-    problem of allocating right sized vector fixed.
-
-commit a8e3ee6513ff3cdacb3cc04bbfc529a220f748b9
-Merge: bb3d92d 2567d29
+commit 12db8db070ba0887bc71c2daedd7b0abd098db16
+Merge: bfe5446 9f76fe5
 Author: Michael White <mikeyw1227@my.uri.edu>
-Date:   Mon Dec 4 14:19:50 2017 -0500
-
-    Merge branch 'Milestone1'
-
 :

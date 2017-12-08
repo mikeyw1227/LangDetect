@@ -5,7 +5,7 @@
 #include <fstream>
 
 int main(int argc, char *argv[]){
-  if(argc < 2){
+  if(argc <= 2){
     return 1; exit(EXIT_FAILURE);
   }
 double comp = 0;
@@ -19,7 +19,7 @@ for (int i = 1; i < argc - 2; i++){
   std::vector<int> langtf = lang.getTrigramFreq();
 
   //test language
-  languages test = languages(argv[-1]);
+  languages test = languages(argv[argc-1]);
   std::vector<int> testtf = test.getTrigramFreq();
   double sim = similar.setSimilarity(langtf, testtf);
   //seeing which lang is most similar
