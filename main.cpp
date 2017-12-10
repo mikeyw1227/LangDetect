@@ -20,11 +20,8 @@ else{return 1; exit(EXIT_FAILURE);}
 
 for (int i = 1; i < argc - 2; i++){
   //language to be tested
-
   languages lang = languages(argv[i]);
-
   lang.setName(argv[i]);
-  //setting the languages trigramfreq
   std::vector<int> langtf = lang.getTrigramFreq();
 
   //test language

@@ -4,6 +4,7 @@
 #include <string>
 #include <cmath>
 
+
 languages::languages(){
   trigramFreq = std::vector<int>(pow(27,3),0);
   name = "";
@@ -46,6 +47,11 @@ languages::languages(std::ifstream &infile){
   }
   }
 
+/*
+Function that takes a language as a parameter and sets the trigram
+frequency of the language. The trigram frequency is a vector of
+integers
+*/
 void languages::setTrigramFreq(std::string language){
   std::string curStr;
   int index;
@@ -57,25 +63,25 @@ void languages::setTrigramFreq(std::string language){
     //loop through substring to get frequencies
     for(int j = 0; j < (int)curStr.length(); j++){
       x = (int)curStr[j];
-      //if there char is a space set it to 0
+      //if the char is a space set its value to 0
       if(x == 32){
         x = 0;
       }
       else{
+        //getting the value of the char in the 1st spot of the trigram
         if(j == 0){
           int firstTerm = ((x - 96) * pow(27,2));
           index = index + firstTerm;
-          //std::cout << "first: "<< firstTerm<<std::endl;
         }
+        //getting the value of the char in the 2nd spot of the trigram
         if(j == 1){
           int secondTerm = ((x - 96) * 27);
           index = index + secondTerm;
-          //std::cout << "second: "<< secondTerm<<std::endl;
         }
+        //getting the value of the char in the 3rd spot of the trigram
         if(j == 2){
           int thirdTerm =  (x - 96);
           index = index +thirdTerm;
-          //std::cout << "third: "<< thirdTerm<<std::endl;
         }
       }
     }
